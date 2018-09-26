@@ -1,0 +1,16 @@
+.btn{
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 18px 20px;
+    font-size: 16px;
+}
+#button{
+    text-align:right;
+}
+.success {background-color: #4CAF50;}
+.success:hover {background-color: #46a049;}
+
+.page-header{height: 50px;}
+
+.col {color: red;}
