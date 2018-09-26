@@ -14,3 +14,16 @@
 .page-header{height: 50px;}
 
 .col {color: red;}
+.centro {
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    padding: 100px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto;
+}
