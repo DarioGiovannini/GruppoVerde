@@ -14,9 +14,9 @@
 <body style="background-color:green">
     <div align="center">
         <div>
-            <button type="submit" class='btn btn-primary' style="margin:20px;margin-top:200px"> <p style="font-size: 20px"> Giacenze Milano </p> </button> <br>
-            <button type="submit" class='btn btn-primary'  style="margin:20px"> <p style="font-size: 20px"> Carichi Rimini </p> </button> <br>
-            <button type="submit" class='btn btn-primary'  style="margin:20px"> <p style="font-size: 20px"> Maggior Costo </p> </button> <br>
+            <button type="submit" class='btn btn-primary' style="margin:20px;margin-top:200px" onclick="window.location.href='Crud.php?tabella=giacenzemilano'"> <p style="font-size: 20px"> Giacenze Milano </p> </button> <br>
+            <button type="submit" class='btn btn-primary'  style="margin:20px"  onclick="window.location.href='Crud.php?tabella=carichirimini'"> <p style="font-size: 20px"> Carichi Rimini </p> </button> <br>
+            <button type="submit" class='btn btn-primary'  style="margin:20px"  onclick="window.location.href='Crud.php?tabella=maggiorcosto'"> <p style="font-size: 20px"> Maggior Costo </p> </button> <br>
         </div>
     </div>
 
