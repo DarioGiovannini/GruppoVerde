@@ -1,10 +1,8 @@
 
 
-function selection(file,tabella,log){
-    $("#btnDelete").prop("disabled",true);
-    $("#btnUpdate").prop("disabled",true);
+function selection(file,tabella){
     $("#id_table").hide();
-    $("#id_table").load(file + "?tabella=" + tabella + "&log=" + log);
+    $("#id_table").load(file + "?tabella=" + tabella);
     $("#id_table").fadeIn(1000);
 }
 

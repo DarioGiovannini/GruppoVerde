@@ -12,13 +12,16 @@
     <script language="JavaScript" type="text/JavaScript" src="scripts/AJAX.js"></script>
 </head>
 <body style="background-color:green">
-    <div class="centro">
-        <div>
-            <button type="submit" class='btn btn-primary' style="margin:20px"> Giacenze Milano </button>
-            <button type="submit" class='btn btn-primary'  style="margin:20px"> Carichi Rimini </button>
-            <button type="submit" class='btn btn-primary'  style="margin:20px"> Maggior Costo </button>
-        </div>
-    </div>
+<a href="Crud.php?tabella=giacenzemilano">s</a>
+            <form action="Crud.php?tabella=giacenzemilano">
+                <button type="submit" class='btn btn-primary'  > Giacenze Milano </button>
+            </form>
+            <form action="Crud.php?tabella=carichirimini">
+                <button type="submit" class='btn btn-primary'> Carichi Rimini </button>
+            </form>
+            <form action="Crud.php?tabella=maggiorcosto">
+                <button type="submit" class='btn btn-primary' > Maggior Costo </button>
+            </form>
 
 </body>
 </html>

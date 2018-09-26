@@ -1,7 +1,5 @@
 <?php
 session_start();
-if(!(isset($_SESSION["Utente"]) && isset($_SESSION["Password"]) && isset($_SESSION['Ruolo']))) header("location:index.php");
-//creazione connessione
 $tabella=$_GET['tabella'];
 include("Config.php");
 $colonne="SHOW COLUMNS FROM $tabella";
@@ -29,27 +27,15 @@ while(  $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $i=0;
     while($rows = $field->fetch(PDO::FETCH_ASSOC)) {     
         $Campo=$rows['Field'];
-        $Campo=$row[$Campo];
+        if($Campo=="Prezzo") $Campo = "€ ".$row[$Campo];
+        else if($Campo=="Data") 
+        else $Campo=$row[$Campo];
         if($i==0) $id=$Campo;
         echo "<td onclick='sorting($i)'>$Campo</td>";
         $i++;
     }
-    echo "<td> <input type='radio' name='seleziona' value='$id' onclick='Abilita()'> </td>";          
-    echo "</tr>";
 }
-if($_GET['log']==1){
-    try{
-        $db->beginTransaction();
-        $Descrizione="Tabella $tabella visualizzata";
-        include("InsertLog.php");
-        $db->commit();
-    }
-    catch(PDOException $e){
-        $db->rollBack();
-        echo $e->getMessage(); 
-    }
-    
-}
+
 
 
 
