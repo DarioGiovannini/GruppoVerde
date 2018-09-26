@@ -9,14 +9,18 @@ echo "
     <thead>
     <tr>";
 $i=0;
+$sql = "SELECT * FROM $tabella";
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-    echo "<th onclick='sorting($i)'>". $row['Field'] ."</th>";
+    if($i!=0 && $_GET["ricerca"]!="0") $sql = $sql . " OR";
+    if($_GET["ricerca"]!="0") $sql = $sql . " WHERE " . $row['Field'] . " like '%".$row['Field']."%'";
+    echo "<th>". $row['Field'] ."<button class=' btn-primary' style='margin-left:5px' onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"ASC\");'> <i class='glyphicon glyphicon-arrow-up'> </i> </button>  <button class=' btn-primary'  style='margin-left:5px'  onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"DESC\");'> <i class='glyphicon glyphicon-arrow-down'> </i> </button></th>";
     $i++;
 }
 echo "
     </tr>
     </thead>";
-$sql = "SELECT * FROM $tabella";
+
+if($_GET["ordine"]!="0") $sql = $sql . " ORDER BY " . $_GET["Campo"] . " " . $_GET["ordine"];
 $stmt=$db->prepare($sql);
 $stmt->execute();
 while(  $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -31,7 +35,7 @@ while(  $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         else if($Campo=="Data") $Campo=substr($row[$Campo],6,2) . "/" . substr($row[$Campo],4,2) . "/" .  substr($row[$Campo],0,4) ;
         else $Campo=$row[$Campo];
         if($i==0) $id=$Campo;
-        echo "<td onclick='sorting($i)'>$Campo</td>";
+        echo "<td>$Campo</td>";
         $i++;
     }
 }

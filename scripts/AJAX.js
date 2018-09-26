@@ -1,8 +1,8 @@
 
 
-function selection(file,tabella){
+function selection(file,tabella, Campo, ordine, ricerca){
     $("#id_table").hide();
-    $("#id_table").load(file + "?tabella=" + tabella);
+    $("#id_table").load(file + "?tabella=" + tabella +"&Campo=" + Campo + "&ordine=" + ordine + "&ricerca=" + ricerca);
     $("#id_table").fadeIn(1000);
 }
 

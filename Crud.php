@@ -13,7 +13,7 @@
     <script language="JavaScript" type="text/JavaScript" src="scripts/AJAX.js"></script>
 </head>
 
-<body onload="selection('Select.php','<?php echo $tabella ?>');">
+<body onload="selection('Select.php','<?php echo $tabella ?>','0','0','0');">
 
     <!-- navbar -->
     <nav class="navbar navbar-inverse" id="navigation">
