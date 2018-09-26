@@ -28,7 +28,7 @@ while(  $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     while($rows = $field->fetch(PDO::FETCH_ASSOC)) {     
         $Campo=$rows['Field'];
         if($Campo=="Prezzo") $Campo = "€ ".$row[$Campo];
-        else if($Campo=="Data") 
+        else if($Campo=="Data") $Campo=substr($row[$Campo],6,2) . "/" . substr($row[$Campo],4,2) . "/" .  substr($row[$Campo],0,4) ;
         else $Campo=$row[$Campo];
         if($i==0) $id=$Campo;
         echo "<td onclick='sorting($i)'>$Campo</td>";
