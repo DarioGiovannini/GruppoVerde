@@ -29,8 +29,10 @@
             <div class="container">
             <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
-                    <input type='text' id='research' class='form-control' onkeyup='Ricerca();' placeholder='Cerca...'>
-                    <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                <div class="search-control">
+                    <input type='search' id='research'  placeholder='Cerca...'>
+                    <button class="btn-primary" onclick="selection('Select.php','<?php echo $tabella ?>',$('#research').val(),'0','1');"><span class='glyphicon glyphicon-search'></span></button>
+                </div>
                 </div>
             </ul>
             </div>
@@ -40,9 +42,8 @@
     <div class="container">
     
         <p class="alert alert-info" id="info" hidden></p>
-        <table class="table table-hover" id="id_table">
-        </table>
-    </div>   
+        <div id="id_table"     style="display:flex; flex-direction: row; justify-content: center; align-items: center">   
+        </div>   
     
     <p id="prova"></p>
 </body>
