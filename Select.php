@@ -33,8 +33,8 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     if($i==0 && $_GET["ricerca"]!="0") $sql = $sql . " WHERE " . $row['Field'] . " like '%".$_GET['Campo']."%'";
     if($_GET["ricerca"]!="0" && $i!=0 ) $sql = $sql . " OR " . $row['Field'] . " like '%".$_GET['Campo']."%'";
     echo "<th id='".$row['Field']."'";
-      if($_GET['ordine']=="ASC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"DESC\",\"0\");'>" . $row['Field'] .  "<i class='glyphicon glyphicon-chevron-up'> </i>";
-    else if($_GET['ordine']=="DESC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"0\",\"0\");'>". $row['Field'] .  "<i class='glyphicon glyphicon-chevron-down'> </i>";
+      if($_GET['ordine']=="ASC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"DESC\",\"0\");'>" . $row['Field'] .  "<i class='glyphicon glyphicon-chevron-up' style='margin-left:5px'> </i>";
+    else if($_GET['ordine']=="DESC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"0\",\"0\");'>". $row['Field'] .  "<i class='glyphicon glyphicon-chevron-down' style='margin-left:5px'> </i>";
     else   echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"ASC\",\"0\");'>" .$row['Field'] ;
     echo "</th>";
     $i++;
