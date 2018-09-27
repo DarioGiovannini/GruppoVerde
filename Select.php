@@ -17,7 +17,6 @@ if($tabella=="maggiorcosto")
     $row = $paragrafo->fetch(PDO::FETCH_ASSOC);
     echo "<tr> ";
     echo "<td><h3 style='margin:30px'>" .  $row['Prodotto'] ."</h3></td>";
-    $row = $paragrafo->fetch(PDO::FETCH_ASSOC);
     echo "<td><h3 style='margin:30px'> € " .  $row['Prezzo'] ."</h3></td>";
     echo "</tr></table>";
 
