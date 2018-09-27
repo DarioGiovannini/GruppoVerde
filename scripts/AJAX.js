@@ -93,3 +93,6 @@ function Abilita(){
     $("#btnDelete").prop("disabled",false);
     $("#btnUpdate").prop("disabled",false);
 }
+function resetResearch(tabella){
+    if($("#research").val()=="")selection('Select.php',tabella,'0','0','0');
+}

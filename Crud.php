@@ -34,8 +34,8 @@
             <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
                 <div class="search-control">
-                    <input type='search' id='research'  placeholder='Cerca...'>
-                    <button class="btn-danger" onclick="selection('Select.php','<?php echo $tabella ?>',$('#research').val(),'0','1');"><span class='glyphicon glyphicon-search'></span></button>
+                    <input type='search' id='research'  placeholder='Cerca...' onkeyup="resetResearch('<?php echo $tabella ?>');">
+                    <button class="btn-danger" onclick="selection('Select.php','<?php echo $tabella ?>',$('#research').val(),'0',$('#research').val());"><span class='glyphicon glyphicon-search'></span></button>
                 </div>
                 </div>
             </ul>
