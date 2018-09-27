@@ -22,19 +22,23 @@ else $page=$_GET['page']; ?>
     <nav class="navbar navbar-inverse" id="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand"> Giacenze Milano </a>
+                <a class="navbar-brand">
+                <?php if($tabella=='giacenzemilano') echo('Giacenze Milano');
+                else if($tabella=='carichirimini') echo('Carichi Rimini');
+                else if($tabella=='maggiorcosto') echo('Maggior Costo'); ?> </a>
             </div>
-            <ul class="nav navbar-form navbar-left">
-                    <button type="submit" id='giacenzemilano' class='btn-primary' style="margin-left:200px;margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=giacenzemilano'"> Giacenze Milano </p> </button>
-                    <button type="submit" id='carichirimini' class='btn-primary' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=carichirimini'"> Carichi Rimini </p> </button>
-                    <button type="submit" id='maggiorcosto' class='btn-primary' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=maggiorcosto'"> Maggior Costo </p> </button>
+            <ul class="nav navbar navbar-form navbar-left">
+                    <img src="mediaworld_nav.png" style="height:30px;width:150px">
+                    <button type="submit" id='giacenzemilano' class='btn-danger' style="margin-left:130px;margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=giacenzemilano'"> Giacenze Milano </p> </button>
+                    <button type="submit" id='carichirimini' class='btn-danger' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=carichirimini'"> Carichi Rimini </p> </button>
+                    <button type="submit" id='maggiorcosto' class='btn-danger' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=maggiorcosto'"> Maggior Costo </p> </button>
             </ul>
             <div class="container">
             <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
                 <div class="search-control">
-                    <input type='search' id='research'  placeholder='Cerca...'>
-                    <button class="btn-primary" onclick="selection('Select.php','<?php echo $tabella ?>',$('#research').val(),'0','1');"><span class='glyphicon glyphicon-search'></span></button>
+                    <input type='search' id='research'  placeholder='Cerca...' onkeyup="resetResearch('<?php echo $tabella ?>');">
+                    <button class="btn-danger" onclick="selection('Select.php','<?php echo $tabella ?>',$('#research').val(),'0',$('#research').val());"><span class='glyphicon glyphicon-search'></span></button>
                 </div>
                 </div>
             </ul>
