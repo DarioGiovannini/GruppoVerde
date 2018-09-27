@@ -30,9 +30,6 @@ if($tabella=="maggiorcosto")
     echo "<td><h3 style='margin:30px'>" .  $row['Prodotto'] ."</h3></td>";
     echo "<td><h3 style='margin:30px'> € " .  $row['Prezzo'] ."</h3></td>";
     echo "</tr></table>";
-
-   
-
 }
 echo "
     <table class='table table-hover'>
@@ -54,7 +51,10 @@ if($_GET["ordine"]!="0") $sql = $sql . " ORDER BY " . $_GET["Campo"] . " " . $_G
 $stmt=$db->prepare($sql);
 $stmt->execute();
 
-while(  $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+$j= ($page-1) * $perpage;
+for($k=0;$k< $j;$k++)$row = $stmt->fetch(PDO::FETCH_ASSOC);
+while(($row = $stmt->fetch(PDO::FETCH_ASSOC)) && $j<($perpage*$page)) {
+    
     $colonne="SHOW COLUMNS FROM $tabella";
     $field=$db->prepare($colonne);
     $field->execute();
@@ -74,12 +74,12 @@ while(  $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<td>$Campo</td>";
         $i++;
     }
-
+$j++;
 }
 
 echo "</table>";
 
 for($i=1; $i<=$tot_pagine; $i++)
 {
-    echo "<li><a href=Crud.php?page=" .$i."&tabella=".$tabella.">".$i."</a></li>";
+    echo "<button style='margin:2pt;' class='btn-primary' onclick=\"window.location.href='Crud.php?page=" .$i."&tabella=".$tabella."';\">".$i." </button>";
 }
