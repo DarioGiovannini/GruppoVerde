@@ -33,7 +33,7 @@
             <ul class="nav navbar-form navbar-right">
                 <div class="form-group has-feedback">
                 <div class="search-control">
-                    <input type='search' id='research'  placeholder='Cerca...'>
+                    <input type='search' id='research'  placeholder='Cerca...' onkeyup="resetResearch('<?php echo $tabella ?>');">
                     <button class="btn-primary" onclick="selection('Select.php','<?php echo $tabella ?>',$('#research').val(),'0',$('#research').val());"><span class='glyphicon glyphicon-search'></span></button>
                 </div>
                 </div>
