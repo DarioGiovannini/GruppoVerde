@@ -25,9 +25,9 @@
                 else if($tabella=='maggiorcosto') echo('Maggior Costo'); ?> </a>
             </div>
             <ul class="nav navbar-form navbar-left">
-                    <button type="submit" class='btn-primary' style="margin-left:200px;margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=giacenzemilano'"> Giacenze Milano </p> </button>
-                    <button type="submit" class='btn-primary' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=carichirimini'"> Carichi Rimini </p> </button>
-                    <button type="submit" class='btn-primary' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=maggiorcosto'"> Maggior Costo </p> </button>
+                    <button type="submit" id='giacenzemilano' class='btn-primary' style="margin-left:200px;margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=giacenzemilano'"> Giacenze Milano </p> </button>
+                    <button type="submit" id='carichirimini' class='btn-primary' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=carichirimini'"> Carichi Rimini </p> </button>
+                    <button type="submit" id='maggiorcosto' class='btn-primary' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=maggiorcosto'"> Maggior Costo </p> </button>
             </ul>
             <div class="container">
             <ul class="nav navbar-form navbar-right">

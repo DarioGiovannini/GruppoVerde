@@ -17,7 +17,6 @@ if($tabella=="maggiorcosto")
     $row = $paragrafo->fetch(PDO::FETCH_ASSOC);
     echo "<tr> ";
     echo "<td><h3 style='margin:30px'>" .  $row['Prodotto'] ."</h3></td>";
-    $row = $paragrafo->fetch(PDO::FETCH_ASSOC);
     echo "<td><h3 style='margin:30px'> € " .  $row['Prezzo'] ."</h3></td>";
     echo "</tr></table>";
 
@@ -43,7 +42,6 @@ echo "
 if($_GET["ordine"]!="0") $sql = $sql . " ORDER BY " . $_GET["Campo"] . " " . $_GET["ordine"];
 $stmt=$db->prepare($sql);
 $stmt->execute();
-
 
 while(  $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $colonne="SHOW COLUMNS FROM $tabella";
