@@ -4,6 +4,8 @@ function selection(file,tabella, Campo, ordine, ricerca){
     $("#id_table").hide();
     $("#id_table").load(file + "?tabella=" + tabella +"&Campo=" + Campo + "&ordine=" + ordine + "&ricerca=" + ricerca);
     $("#id_table").fadeIn(1000);
+    $("#" + tabella).prop("disabled", true).removeClass("btn-primary").addClass("btn-default");    
+    $("#" + tabella).removeClass("btn-primary").addClass("btn-default");    
 }
 
 function update(view,tabella,file , id, vet) {

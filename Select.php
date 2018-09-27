@@ -24,8 +24,6 @@ if($tabella=="maggiorcosto")
     echo "<h3 style='margin:30px'>" .  $row['Prezzo'] ."</h3>";
     echo "</div>";
     echo "</div>";
-
-
 }
 echo "
     <table class='table table-hover'>
@@ -46,7 +44,6 @@ echo "
 if($_GET["ordine"]!="0") $sql = $sql . " ORDER BY " . $_GET["Campo"] . " " . $_GET["ordine"];
 $stmt=$db->prepare($sql);
 $stmt->execute();
-
 
 while(  $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     $colonne="SHOW COLUMNS FROM $tabella";
