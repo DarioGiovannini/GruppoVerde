@@ -42,7 +42,7 @@
     <div class="container">
     
         <p class="alert alert-info" id="info" hidden></p>
-        <div id="id_table"     style="display:flex; flex-direction: row; justify-content: center; align-items: center">   
+        <div id="id_table">   
         </div>   
     
     <p id="prova"></p>

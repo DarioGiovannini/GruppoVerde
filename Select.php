@@ -8,22 +8,20 @@ $stmt->execute();
 if($tabella=="maggiorcosto") 
 {
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    echo "<div>";
-    echo "<div style='display:flex; flex-direction: row; justify-content: left; align-items: center'> ";
-    echo "<h2 style='margin:30px'>". $row['Field'] ."</h2>";
+    echo "<table align='center'>";
     $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    echo "<h2 style='margin:30px'>". $row['Field'] ."</h2>";
-    echo "</div>";
+ 
     $sql = "SELECT * FROM $tabella";
     $paragrafo=$db->prepare($sql);
     $paragrafo->execute();
     $row = $paragrafo->fetch(PDO::FETCH_ASSOC);
-    echo "<div style='display:flex; flex-direction: row; justify-content: left; align-items: center'> ";
-    echo "<h3 style='margin:30px'>" .  $row['Prodotto'] ."</h3>";
-    $row = $paragrafo->fetch(PDO::FETCH_ASSOC);
-    echo "<h3 style='margin:30px'>" .  $row['Prezzo'] ."</h3>";
-    echo "</div>";
-    echo "</div>";
+    echo "<tr> ";
+    echo "<td><h3 style='margin:30px'>" .  $row['Prodotto'] ."</h3></td>";
+    echo "<td><h3 style='margin:30px'> € " .  $row['Prezzo'] ."</h3></td>";
+    echo "</tr></table>";
+
+
+
 }
 echo "
     <table class='table table-hover'>
