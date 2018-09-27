@@ -32,7 +32,11 @@ $sql = "SELECT * FROM $tabella";
 while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     if($i==0 && $_GET["ricerca"]!="0") $sql = $sql . " WHERE " . $row['Field'] . " like '%".$_GET['Campo']."%'";
     if($_GET["ricerca"]!="0" && $i!=0 ) $sql = $sql . " OR " . $row['Field'] . " like '%".$_GET['Campo']."%'";
-    echo "<th>". $row['Field'] ."<button class=' btn-primary' style='margin-left:5px' onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"ASC\",\"0\");'> <i class='glyphicon glyphicon-arrow-up'> </i> </button>  <button class=' btn-primary'  style='margin-left:5px'  onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"DESC\",\"0\");'> <i class='glyphicon glyphicon-arrow-down'> </i> </button></th>";
+    echo "<th id='".$row['Field']."'";
+      if($_GET['ordine']=="ASC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"DESC\",\"0\");'>" . $row['Field'] .  "<i class='glyphicon glyphicon-chevron-up'> </i>";
+    else if($_GET['ordine']=="DESC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"0\",\"0\");'>". $row['Field'] .  "<i class='glyphicon glyphicon-chevron-down'> </i>";
+    else   echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"ASC\",\"0\");'>" .$row['Field'] ;
+    echo "</th>";
     $i++;
 }
 echo "
