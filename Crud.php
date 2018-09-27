@@ -25,7 +25,7 @@
                 else if($tabella=='maggiorcosto') echo('Maggior Costo'); ?> </a>
             </div>
             <ul class="nav navbar navbar-form navbar-left">
-                    <img src="mediaworld_nav.png" style="height:30px;width:150px">
+                    <img src="mediaworld_nav.png" style="height:30px;width:160px">
                     <button type="submit" id='giacenzemilano' class='btn-danger' style="margin-left:130px;margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=giacenzemilano'"> Giacenze Milano </p> </button>
                     <button type="submit" id='carichirimini' class='btn-danger' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=carichirimini'"> Carichi Rimini </p> </button>
                     <button type="submit" id='maggiorcosto' class='btn-danger' style="margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=maggiorcosto'"> Maggior Costo </p> </button>
