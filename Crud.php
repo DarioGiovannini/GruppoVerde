@@ -34,7 +34,7 @@
                 <div class="form-group has-feedback">
                 <div class="search-control">
                     <input type='search' id='research'  placeholder='Cerca...'>
-                    <button class="btn-primary" onclick="selection('Select.php','<?php echo $tabella ?>',$('#research').val(),'0','1');"><span class='glyphicon glyphicon-search'></span></button>
+                    <button class="btn-primary" onclick="selection('Select.php','<?php echo $tabella ?>',$('#research').val(),'0',$('#research').val());"><span class='glyphicon glyphicon-search'></span></button>
                 </div>
                 </div>
             </ul>
