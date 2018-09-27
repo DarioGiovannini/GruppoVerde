@@ -2,6 +2,17 @@
 session_start();
 $tabella=$_GET['tabella'];
 include("Config.php");
+$sql = "SELECT COUNT(*) FROM $tabella";
+$stmt = $db->prepare($sql);
+$stmt->execute();
+$rows = $stmt->fetchColumn(); 
+$tot_records = $rows;
+$page = 1;
+if(isSet($_GET['page']))
+    {$page = filter_var($_GET['page'],FILTER_SANITIZE_NUMBER_INT);}
+$tot_pagine = ceil($tot_records/$perpage);
+$pagina_corrente = $page;
+$primo = ($pagina_corrente-1)*$perpage;
 $colonne="SHOW COLUMNS FROM $tabella";
 $stmt=$db->prepare($colonne);
 $stmt->execute();
@@ -20,7 +31,7 @@ if($tabella=="maggiorcosto")
     echo "<td><h3 style='margin:30px'> € " .  $row['Prezzo'] ."</h3></td>";
     echo "</tr></table>";
 
-
+   
 
 }
 echo "
@@ -63,9 +74,12 @@ while(  $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo "<td>$Campo</td>";
         $i++;
     }
+
 }
+
 echo "</table>";
 
-
-
-
+for($i=1; $i<=$tot_pagine; $i++)
+{
+    echo "<li><a href=Crud.php?page=" .$i."&tabella=".$tabella.">".$i."</a></li>";
+}

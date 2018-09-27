@@ -1,8 +1,8 @@
 
 
-function selection(file,tabella, Campo, ordine, ricerca){
+function selection(file,page,tabella, Campo, ordine, ricerca){
     $("#id_table").hide();
-    $("#id_table").load(file + "?tabella=" + tabella +"&Campo=" + Campo + "&ordine=" + ordine + "&ricerca=" + ricerca);
+    $("#id_table").load(file + "?page=" + page +"&tabella=" + tabella +"&Campo=" + Campo + "&ordine=" + ordine + "&ricerca=" + ricerca);
     $("#id_table").fadeIn(1000);
     $("#" + tabella).prop("disabled", true).removeClass("btn-primary").addClass("btn-default");    
     $("#" + tabella).removeClass("btn-primary").addClass("btn-default");    

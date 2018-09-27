@@ -1,4 +1,7 @@
-<?php $tabella=$_GET["tabella"];?>
+<?php $tabella=$_GET["tabella"];
+if(!isSet($_GET['page'])) $page=1;
+else $page=$_GET['page']; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +16,7 @@
     <script language="JavaScript" type="text/JavaScript" src="scripts/AJAX.js"></script>
 </head>
 
-<body onload="selection('Select.php','<?php echo $tabella ?>','0','0','0');">
+<body onload="selection('Select.php','page=<?php echo $page ?>','<?php echo $tabella ?>','0','0','0');">
 
     <!-- navbar -->
     <nav class="navbar navbar-inverse" id="navigation">
