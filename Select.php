@@ -41,9 +41,9 @@ while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     if($i==0 && $_GET["ricerca"]!="0") $sql = $sql . " WHERE " . $row['Field'] . " like '%".$_GET['ricerca']."%'";
     if($_GET["ricerca"]!="0" && $i!=0 ) $sql = $sql . " OR " . $row['Field'] . " like '%".$_GET['ricerca']."%'";
     echo "<th id='".$row['Field']."'";
-      if($_GET['ordine']=="ASC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"DESC\",\"".$_GET['ricerca']."\");'>" . $row['Field'] .  "<i class='glyphicon glyphicon-chevron-up' style='margin-left:5px'> </i>";
-    else if($_GET['ordine']=="DESC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"0\",\"".$_GET['ricerca']."\");'>". $row['Field'] .  "<i class='glyphicon glyphicon-chevron-down' style='margin-left:5px'> </i>";
-    else   echo "onclick='selection(\"Select.php\",\"$tabella\",\"".$row['Field']."\",\"ASC\",\"".$_GET['ricerca']."\");'>" .$row['Field'] ;
+      if($_GET['ordine']=="ASC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",$page,\"$tabella\",\"".$row['Field']."\",\"DESC\",\"".$_GET['ricerca']."\");'>" . $row['Field'] .  "<i class='glyphicon glyphicon-chevron-up' style='margin-left:5px'> </i>";
+    else if($_GET['ordine']=="DESC" && $row['Field']==$_GET["Campo"])  echo "onclick='selection(\"Select.php\",$page,\"$tabella\",\"".$row['Field']."\",\"0\",\"".$_GET['ricerca']."\");'>". $row['Field'] .  "<i class='glyphicon glyphicon-chevron-down' style='margin-left:5px'> </i>";
+    else   echo "onclick='selection(\"Select.php\",$page,\"$tabella\",\"".$row['Field']."\",\"ASC\",\"".$_GET['ricerca']."\");'>" .$row['Field'] ;
     echo "</th>";
     $i++;
 }
@@ -85,5 +85,5 @@ echo "</table>";
 
 for($i=1; $i<=$tot_pagine; $i++)
 {
-    echo "<button style='margin:2pt;' class='btn-primary' onclick=\"window.location.href='Crud.php?page=" .$i."&tabella=".$tabella."';\">".$i." </button>";
+    echo "<button style='margin:2pt;' class='btn-danger' onclick=\"window.location.href='Crud.php?page=" .$i."&tabella=".$tabella."';\">".$i." </button>";
 }
