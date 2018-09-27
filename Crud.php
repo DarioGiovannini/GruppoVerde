@@ -19,7 +19,10 @@
     <nav class="navbar navbar-inverse" id="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand"> Giacenze Milano </a>
+                <a class="navbar-brand">
+                <?php if($tabella=='giacenzemilano') echo('Giacenze Milano');
+                else if($tabella=='carichirimini') echo('Carichi Rimini');
+                else if($tabella=='maggiorcosto') echo('Maggior Costo'); ?> </a>
             </div>
             <ul class="nav navbar-form navbar-left">
                     <button type="submit" class='btn-primary' style="margin-left:200px;margin-right:10px;font-size:13px;width:120px" onclick="window.location.href='Crud.php?tabella=giacenzemilano'"> Giacenze Milano </p> </button>
